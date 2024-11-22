@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cdvcinema
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+#    show-sql : true
+  data:
+    redis:
+      host: localhost
+      password:
+      connect-timeout: 10000
+      timeout: 10000
+#jwt:
+#  expiration: 2592000
+#  secretKey: dkRBJ4mTndw4RuGLkFG/TaGwbQR92xT6oyNc+35Wx2k=
+api:
+  prefix: /api/v1
+
+imagesDir:
+  name: image/
+
+
