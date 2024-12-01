@@ -21,6 +21,12 @@ public class Coupon {
 
     private String name;
 
+    private String urlImage;
+
+    private String code;
+
+    private String scope;
+
     private String description;
 
     private String discountType;
@@ -36,6 +42,8 @@ public class Coupon {
     private LocalDateTime expirationDate;
 
     private int usageLimit;
+
+    private int used;
 
     private int userSpecificLimit;
 

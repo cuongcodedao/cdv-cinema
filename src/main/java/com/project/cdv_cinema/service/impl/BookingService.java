@@ -34,12 +34,13 @@ public class BookingService implements IBookingService {
     private final IFoodComboDetailService foodComboDetailService;
     private final IUserService userService;
     private final ModelMapper modelMapper;
-    private final ShowtimeService showtimeService;
+    private final IShowtimeService showtimeService;
+    private final ICouponService couponService;
     private final Gson gson;
 
     @Override
     @Transactional
-    public BookingResponse createBooking(BookingDTO bookingDTO) throws SeatIsLockingException {
+    public BookingResponse createBooking(BookingDTO bookingDTO) throws SeatIsLockingException, EntityNotFoundException {
         List<Long> seats = new ArrayList<>();
         for(TicketDTO ticketDTO : bookingDTO.getTickets()) {
             seats.add(ticketDTO.getSeatId());
@@ -72,6 +73,8 @@ public class BookingService implements IBookingService {
         booking.setDate(LocalDateTime.now());
         booking.setStatus(BookingStatus.PENDING);
         booking.setTotalPrice(totalPrice);
+
+
         bookingRepository.save(booking);
         return toBookingResponse(booking);
     }

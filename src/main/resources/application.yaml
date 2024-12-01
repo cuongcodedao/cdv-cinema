@@ -16,13 +16,21 @@ spring:
       password:
       connect-timeout: 10000
       timeout: 10000
-#jwt:
-#  expiration: 2592000
-#  secretKey: dkRBJ4mTndw4RuGLkFG/TaGwbQR92xT6oyNc+35Wx2k=
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+jwt:
+  expiration: 2592000
+  secretKey: dkRBJ4mTndw4RuGLkFG/TaGwbQR92xT6oyNc+35Wx2k=
 api:
   prefix: /api/v1
 
 imagesDir:
   name: image/
+
+
+
 
 

@@ -10,8 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("${api.prefix}/bookings")
+@RequestMapping(value = "${api.prefix}/bookings")
 public class BookingController {
     private final IBookingService bookingService;
 
